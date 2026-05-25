@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { SECTION_IDS } from "@/lib/sections";
 import type { Locale } from "@/lib/types";
 import type { SiteContent } from "@/lib/types";
@@ -33,7 +34,16 @@ export function SiteNav({
   const otherPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 md:px-10 bg-gradient-to-b from-[#0D0B1E]/95 to-transparent">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 md:px-10 backdrop-blur-md border-b border-violet-accent/10"
+      style={{
+        background:
+          "linear-gradient(to bottom, rgba(5,4,10,0.92), rgba(5,4,10,0.6))",
+      }}
+    >
       <button
         type="button"
         onClick={() => onNavigate(0)}
@@ -51,10 +61,10 @@ export function SiteNav({
               key={key}
               type="button"
               onClick={() => onNavigate(sectionIndex)}
-              className={`mono-label text-xs transition-colors ${
+              className={`mono-label text-xs transition-all duration-300 ${
                 isActive
-                  ? "text-cyan-accent glow-text-cyan"
-                  : "text-silver/50 hover:text-silver"
+                  ? "text-cyan-accent glow-text-cyan scale-105"
+                  : "text-silver/50 hover:text-magenta-accent"
               }`}
             >
               {content.nav[key]}
@@ -64,16 +74,16 @@ export function SiteNav({
       </nav>
 
       <div className="flex items-center gap-4">
-        <span className="mono-label text-indigo-accent/60 hidden sm:inline">
+        <span className="mono-label text-violet-accent/70 hidden sm:inline">
           {String(activeSection + 1).padStart(2, "0")}/{SECTION_IDS.length}
         </span>
         <Link
           href={otherPath}
-          className="mono-label text-xs border border-indigo-accent/40 px-3 py-1.5 rounded hover:border-cyan-accent/60 hover:text-cyan-accent transition-colors"
+          className="mono-label text-xs border border-violet-accent/40 px-3 py-1.5 rounded hover:border-magenta-accent/60 hover:text-cyan-accent transition-colors"
         >
           {locale === "en" ? "DE" : "EN"}
         </Link>
       </div>
-    </header>
+    </motion.header>
   );
 }

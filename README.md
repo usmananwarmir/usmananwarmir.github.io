@@ -31,10 +31,18 @@ Static output is in `out/`.
 
 ## Deploy to GitHub Pages
 
-1. Create repo **`usmananwarmir.github.io`** on GitHub.
-2. Push this project to `main`.
-3. In repo **Settings → Pages → Build and deployment**, set source to **GitHub Actions**.
-4. The workflow `.github/workflows/deploy.yml` runs on push to `main`.
+**One-time setup** (GitHub CLI):
+
+```powershell
+gh auth login -h github.com -p https -w
+.\scripts\deploy.ps1
+```
+
+Or manually:
+
+1. Create public repo **`usmananwarmir.github.io`** on GitHub.
+2. Push `main` branch to that repo.
+3. **Settings → Pages → Build and deployment** → source: **GitHub Actions**.
 
 Live URL: `https://usmananwarmir.github.io/en/`
 

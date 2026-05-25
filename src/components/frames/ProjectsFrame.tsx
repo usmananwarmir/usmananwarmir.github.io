@@ -13,37 +13,42 @@ export function ProjectsFrame({ content }: ProjectsFrameProps) {
   const { projects } = content;
 
   return (
-    <section
-      id="projects"
-      className="section-panel section-panel--content flex items-center justify-center px-6 md:px-16 lg:px-24"
-    >
+    <div className="flex items-center justify-center px-6 md:px-16 lg:px-24">
       <div className="max-w-3xl w-full text-center md:text-left">
         <FrameLabel label={projects.frameLabel} />
         <SectionTitle title={projects.title} subtitle={projects.subtitle} />
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, rotateX: 20, z: -60 }}
+          whileInView={{ opacity: 1, rotateX: 0, z: 0 }}
           viewport={{ once: true }}
-          className="glow-border rounded-xl p-12 md:p-16 bg-[#12101f]/60 backdrop-blur-md border-dashed"
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="glow-border rounded-xl p-12 md:p-16 bg-bg-surface/50 backdrop-blur-md border-dashed"
+          style={{ transformPerspective: 800, transformStyle: "preserve-3d" }}
         >
-          <p className="mono-label text-cyan-accent mb-4">
+          <p className="mono-label text-magenta-accent mb-4 glow-text-cyan">
             ◈ {projects.placeholder}
           </p>
           <p className="text-silver/70 text-base md:text-lg leading-relaxed">
             {projects.comingSoon}
           </p>
 
-          <div className="mt-10 grid grid-cols-3 gap-4 opacity-40">
-            {[1, 2, 3].map((n) => (
-              <div
+          <div className="mt-10 grid grid-cols-3 gap-4">
+            {[1, 2, 3].map((n, i) => (
+              <motion.div
                 key={n}
-                className="aspect-video rounded border border-indigo-accent/20 bg-indigo-accent/5"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 0.5, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                whileHover={{ opacity: 0.8, scale: 1.05, rotateY: 6 }}
+                className="aspect-video rounded-lg border border-violet-accent/25 bg-gradient-to-br from-violet-accent/10 to-cyan-accent/5"
+                style={{ transformPerspective: 400 }}
               />
             ))}
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

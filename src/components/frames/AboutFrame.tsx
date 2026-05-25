@@ -13,10 +13,7 @@ export function AboutFrame({ content }: AboutFrameProps) {
   const { about } = content;
 
   return (
-    <section
-      id="about"
-      className="section-panel section-panel--content flex items-center px-6 md:px-16 lg:px-24"
-    >
+    <div className="flex items-center px-6 md:px-16 lg:px-24">
       <div className="max-w-3xl">
         <FrameLabel label={about.frameLabel} />
         <SectionTitle title={about.title} />
@@ -25,17 +22,22 @@ export function AboutFrame({ content }: AboutFrameProps) {
           {about.paragraphs.map((p, i) => (
             <motion.p
               key={i}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-silver/90 text-base md:text-lg leading-relaxed border-l-2 border-indigo-accent/30 pl-5"
+              initial={{ opacity: 0, x: -40, rotateY: -8 }}
+              whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                delay: i * 0.12,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-silver/90 text-base md:text-lg leading-relaxed border-l-2 border-violet-accent/50 pl-5 hover:border-magenta-accent/70 transition-colors"
+              style={{ transformPerspective: 600 }}
             >
               {p}
             </motion.p>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

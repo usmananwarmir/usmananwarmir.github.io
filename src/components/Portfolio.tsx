@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Locale } from "@/lib/types";
 import { getContent } from "@/lib/content";
+import { CinematicBackground } from "@/components/effects/CinematicBackground";
 import { FilmGrain } from "@/components/effects/FilmGrain";
+import { LensFlare } from "@/components/effects/LensFlare";
+import { Scanlines } from "@/components/effects/Scanlines";
+import { ScrollProgress } from "@/components/effects/ScrollProgress";
 import { Vignette } from "@/components/effects/Vignette";
 import { SiteNav } from "@/components/layout/SiteNav";
 import { FrameProgress } from "@/components/layout/FrameProgress";
@@ -15,6 +19,7 @@ import { ProjectsFrame } from "@/components/frames/ProjectsFrame";
 import { CredentialsFrame } from "@/components/frames/CredentialsFrame";
 import { MetricsFrame } from "@/components/frames/MetricsFrame";
 import { ContactFrame } from "@/components/frames/ContactFrame";
+import { ScrollSection } from "@/components/ui/ScrollSection";
 import { SECTION_COUNT, SECTION_IDS } from "@/lib/sections";
 
 type PortfolioProps = {
@@ -80,8 +85,12 @@ export function Portfolio({ locale }: PortfolioProps) {
 
   return (
     <>
+      <CinematicBackground />
+      <LensFlare />
       <FilmGrain />
+      <Scanlines />
       <Vignette />
+      <ScrollProgress />
       <SiteNav
         locale={locale}
         content={content}
@@ -90,15 +99,31 @@ export function Portfolio({ locale }: PortfolioProps) {
       />
       <FrameProgress total={SECTION_COUNT} active={activeSection} />
 
-      <main aria-label="Portfolio">
-        <HeroFrame content={content} />
-        <AboutFrame content={content} />
-        <ExperienceFrame content={content} />
-        <SkillsFrame content={content} />
-        <ProjectsFrame content={content} />
-        <CredentialsFrame content={content} />
-        <MetricsFrame content={content} />
-        <ContactFrame content={content} locale={locale} />
+      <main className="cinematic-main relative z-10" aria-label="Portfolio">
+        <ScrollSection id="hero" variant="hero">
+          <HeroFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="about">
+          <AboutFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="experience">
+          <ExperienceFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="skills">
+          <SkillsFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="projects">
+          <ProjectsFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="credentials">
+          <CredentialsFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="metrics">
+          <MetricsFrame content={content} />
+        </ScrollSection>
+        <ScrollSection id="contact">
+          <ContactFrame content={content} locale={locale} />
+        </ScrollSection>
       </main>
     </>
   );

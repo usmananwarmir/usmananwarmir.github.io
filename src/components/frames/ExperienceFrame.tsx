@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { SiteContent } from "@/lib/types";
 import { FrameLabel } from "@/components/ui/FrameLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { CinematicCard } from "@/components/ui/CinematicCard";
 
 type ExperienceFrameProps = {
   content: SiteContent;
@@ -13,23 +13,13 @@ export function ExperienceFrame({ content }: ExperienceFrameProps) {
   const { experience, experiences } = content;
 
   return (
-    <section
-      id="experience"
-      className="section-panel section-panel--content flex flex-col px-6 md:px-16 lg:px-24"
-    >
+    <div className="flex flex-col px-6 md:px-16 lg:px-24">
       <FrameLabel label={experience.frameLabel} />
       <SectionTitle title={experience.title} subtitle={experience.subtitle} />
 
       <div className="space-y-6 max-w-5xl">
         {experiences.map((job, i) => (
-          <motion.article
-            key={`${job.company}-${job.period}`}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="glow-border rounded-lg p-5 md:p-6 bg-[#12101f]/80 backdrop-blur-sm"
-          >
+          <CinematicCard key={`${job.company}-${job.period}`} delay={i * 0.08}>
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-white">
@@ -42,7 +32,7 @@ export function ExperienceFrame({ content }: ExperienceFrameProps) {
                   {job.location}
                 </p>
               </div>
-              <span className="mono-label text-indigo-accent/80 shrink-0">
+              <span className="mono-label text-magenta-accent/90 shrink-0">
                 {job.period}
               </span>
             </div>
@@ -52,14 +42,14 @@ export function ExperienceFrame({ content }: ExperienceFrameProps) {
                   key={j}
                   className="text-silver/80 text-sm md:text-[0.9rem] leading-relaxed flex gap-2"
                 >
-                  <span className="text-cyan-accent shrink-0 mt-1.5">▸</span>
+                  <span className="text-gold-accent shrink-0 mt-1.5">▸</span>
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
-          </motion.article>
+          </CinematicCard>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

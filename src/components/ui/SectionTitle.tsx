@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 type SectionTitleProps = {
   title: string;
   subtitle?: string;
@@ -5,7 +9,14 @@ type SectionTitleProps = {
 
 export function SectionTitle({ title, subtitle }: SectionTitleProps) {
   return (
-    <div className="mb-8 md:mb-10">
+    <motion.div
+      initial={{ opacity: 0, x: -30, rotateY: -10 }}
+      whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="mb-8 md:mb-10"
+      style={{ transformPerspective: 700 }}
+    >
       <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight leading-tight">
         {title}
       </h2>
@@ -14,6 +25,6 @@ export function SectionTitle({ title, subtitle }: SectionTitleProps) {
           {subtitle}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }
