@@ -276,6 +276,18 @@ body {
   animation: float-drift 9s ease-in-out infinite;
 }
 
+/* Hero profile: hide leftover black from PNG on dark theme */
+.profile-hero-image {
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.45));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-hero-image {
+    mix-blend-mode: normal;
+  }
+}
+
 @keyframes float-drift {
   0%,
   100% {

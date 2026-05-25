@@ -14,131 +14,161 @@ type HeroFrameProps = {
 export function HeroFrame({ content }: HeroFrameProps) {
   const { hero } = content;
   const { scrollY } = useScroll();
-  const headlineY = useTransform(scrollY, [0, 500], [0, 160]);
-  const headlineOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const profileY = useTransform(scrollY, [0, 600], [0, 100]);
-  const bgY = useTransform(scrollY, [0, 800], [0, 200]);
+  const contentY = useTransform(scrollY, [0, 500], [0, 80]);
+  const photoY = useTransform(scrollY, [0, 600], [0, 50]);
+  const photoScale = useTransform(scrollY, [0, 400], [1, 0.92]);
+  const bgY = useTransform(scrollY, [0, 800], [0, 120]);
 
   return (
-    <div className="relative flex flex-col justify-end pb-24 px-6 md:px-16 lg:px-24 min-h-[inherit] overflow-hidden">
+    <div className="relative min-h-[inherit] overflow-hidden px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-32 md:pb-20">
       <motion.div
-        className="absolute inset-0 opacity-70"
+        className="absolute inset-0 opacity-80"
         style={{
           y: bgY,
           background:
-            "radial-gradient(ellipse 90% 70% at 65% 25%, rgba(45,212,191,0.2), transparent 55%), radial-gradient(ellipse 60% 50% at 15% 75%, rgba(56,189,248,0.15), transparent)",
+            "radial-gradient(ellipse 55% 60% at 75% 40%, rgba(45,212,191,0.22), transparent 60%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(56,189,248,0.12), transparent)",
         }}
         aria-hidden="true"
       />
 
-      <ParallaxLayer mouseDepth={20} scrollDepth={30} speed={0.6}>
-        <motion.div
-          className="relative z-10 max-w-5xl"
-          style={{ y: headlineY, opacity: headlineOpacity }}
-        >
-          <FrameLabel label={`${hero.frameLabel.replace("FRAME_", "")} · 2026`} />
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_minmax(280px,420px)] gap-10 lg:gap-6 xl:gap-12 items-center min-h-[calc(100dvh-8rem)]">
+        {/* Copy — left */}
+        <ParallaxLayer mouseDepth={16} scrollDepth={25} speed={0.5}>
+          <motion.div style={{ y: contentY }}>
+            <FrameLabel
+              label={`${hero.frameLabel.replace("FRAME_", "")} · 2026`}
+            />
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="mono-label text-aqua-accent mb-6"
-          >
-            ◈ {hero.tagline} ◈
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="text-4xl md:text-6xl lg:text-8xl font-semibold leading-[1.02] tracking-tight max-w-5xl"
-          >
-            <span className="bg-gradient-to-br from-white via-silver to-cyan-accent bg-clip-text text-transparent">
-              {hero.headline}
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="mt-8 text-lg md:text-xl text-silver/90 max-w-2xl leading-relaxed"
-          >
-            {hero.subheadline}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.65 }}
-            className="mt-12 flex items-center gap-3"
-          >
-            <motion.span
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-              className="text-aqua-accent text-xl"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mono-label text-aqua-accent mb-5"
             >
-              ↓
-            </motion.span>
-            <p className="mono-label text-muted">{hero.scrollHint}</p>
-          </motion.div>
-        </motion.div>
-      </ParallaxLayer>
+              ◈ {hero.tagline} ◈
+            </motion.p>
 
-      <ParallaxLayer
-        mouseDepth={28}
-        scrollDepth={45}
-        speed={1.2}
-        className="absolute bottom-24 right-6 md:right-16 lg:right-24 z-10"
-      >
-        <motion.div
-          className="flex flex-col md:flex-row items-end md:items-center gap-6"
-          style={{ y: profileY }}
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight"
+            >
+              <span className="bg-gradient-to-br from-white via-silver to-cyan-accent bg-clip-text text-transparent">
+                {hero.headline}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.25 }}
+              className="mt-6 text-base md:text-lg text-silver/90 max-w-xl leading-relaxed"
+            >
+              {hero.subheadline}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-8 flex flex-wrap items-center gap-4"
+            >
+              <span className="mono-label text-xs px-4 py-2 rounded-full border border-aqua-accent/40 text-aqua-accent glass-chip">
+                {hero.availability}
+              </span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55 }}
+              className="mt-10 flex items-center gap-3"
+            >
+              <motion.span
+                animate={{ y: [0, 6, 0] }}
+                transition={{
+                  duration: 2.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="text-aqua-accent text-lg"
+              >
+                ↓
+              </motion.span>
+              <p className="mono-label text-muted">{hero.scrollHint}</p>
+            </motion.div>
+          </motion.div>
+        </ParallaxLayer>
+
+        {/* Photo — right, prominent */}
+        <ParallaxLayer
+          mouseDepth={24}
+          scrollDepth={40}
+          speed={1.1}
+          className="order-first lg:order-last flex justify-center lg:justify-end"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.45 }}
-            whileHover={{ scale: 1.06, rotateY: 6 }}
-            className="relative w-32 h-32 md:w-44 md:h-44 shrink-0"
+            className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-none lg:w-full"
+            style={{ y: photoY, scale: photoScale }}
             data-cursor="PROFILE"
           >
+            {/* Glow pedestal */}
             <div
-              className="absolute inset-0 rounded-full blur-2xl opacity-50"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[40%] rounded-full blur-3xl opacity-60"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)",
+                  "radial-gradient(ellipse, rgba(45,212,191,0.45) 0%, rgba(56,189,248,0.15) 50%, transparent 70%)",
               }}
               aria-hidden="true"
             />
-            <Image
-              src="/profile.png"
-              alt={SITE.name}
-              width={176}
-              height={176}
-              className="relative z-10 w-full h-full object-contain object-bottom drop-shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-              priority
-            />
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.85, delay: 0.55 }}
-            className="text-right md:text-left"
-          >
-            <span className="inline-block mono-label text-xs px-3 py-1.5 rounded-full border border-aqua-accent/40 text-aqua-accent mb-3 glass-chip">
-              {hero.availability}
-            </span>
-            <p className="text-2xl md:text-4xl font-semibold text-white tracking-tight">
-              {SITE.name}
-            </p>
-            <p className="mono-label text-muted mt-2 text-xs">
-              {hero.role} · {hero.location}
-            </p>
+            {/* Frame ring */}
+            <div
+              className="absolute inset-0 rounded-[2rem] border border-aqua-accent/25 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(45,212,191,0.08) 0%, transparent 40%)",
+                boxShadow:
+                  "0 0 60px rgba(45, 212, 191, 0.12), inset 0 1px 0 rgba(255,255,255,0.06)",
+              }}
+              aria-hidden="true"
+            />
+
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] min-h-[340px] sm:min-h-[400px] lg:min-h-[480px] flex items-end justify-center overflow-visible">
+              <Image
+                src="/profile.png"
+                alt={SITE.name}
+                width={420}
+                height={520}
+                priority
+                className="relative z-10 h-[108%] w-auto max-w-[115%] object-contain object-bottom profile-hero-image"
+              />
+            </div>
+
+            {/* Name card — overlaps bottom of photo */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[92%] z-20 glass-chip rounded-2xl px-5 py-4 text-center border border-aqua-accent/30"
+              style={{
+                boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
+              }}
+            >
+              <p className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+                {SITE.name}
+              </p>
+              <p className="mono-label text-muted mt-1.5 text-[0.65rem] leading-relaxed">
+                {hero.role}
+              </p>
+              <p className="mono-label text-cyan-accent/80 mt-0.5 text-[0.6rem]">
+                {hero.location}
+              </p>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </ParallaxLayer>
+        </ParallaxLayer>
+      </div>
     </div>
   );
 }
