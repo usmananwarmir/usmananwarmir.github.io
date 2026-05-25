@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Usman Anwar — Portfolio
 
-## Getting Started
+Devopslens-inspired dark portfolio for an **Infrastructure & Automation Engineer**. Built with Next.js, Tailwind CSS, and Framer Motion. Static export for **GitHub Pages** at `https://usmananwarmir.github.io`.
 
-First, run the development server:
+## Features
+
+- Horizontal “frame” scrolling (Devopslens-style)
+- English + German (`/en/`, `/de/`)
+- CV content: experience, skills, education, certifications, languages
+- Projects placeholder (add later in `src/lib/content/`)
+- LinkedIn contact, phone, GitHub
+- Impressum & Datenschutz template pages
+- GitHub Actions deploy workflow
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (redirects to `/en/`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Static output is in `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create repo **`usmananwarmir.github.io`** on GitHub.
+2. Push this project to `main`.
+3. In repo **Settings → Pages → Build and deployment**, set source to **GitHub Actions**.
+4. The workflow `.github/workflows/deploy.yml` runs on push to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Live URL: `https://usmananwarmir.github.io/en/`
 
-## Deploy on Vercel
+## Customize
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Item | Location |
+|------|----------|
+| Copy EN/DE | `src/lib/content/en.ts`, `de.ts` |
+| Links, phone | `src/lib/constants.ts` |
+| Profile photo | Replace `public/profile-placeholder.svg` or add `public/profile.jpg` and update `HeroFrame.tsx` |
+| Projects | `src/lib/content/*.ts` + `ProjectsFrame.tsx` |
+| Analytics | Add later; note in `datenschutz` pages |
+| Legal text | `src/app/[locale]/impressum/`, `datenschutz/` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Photo
+
+Drop your image at `public/profile.jpg` and update the `Image` `src` in `src/components/frames/HeroFrame.tsx`.
