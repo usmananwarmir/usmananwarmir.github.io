@@ -23,12 +23,10 @@ export function FrameProgress({ total, active }: FrameProgressProps) {
             height: i === active ? 36 : 8,
             background:
               i === active
-                ? "linear-gradient(180deg, #14b8a6, #2dd4bf, #38bdf8)"
-                : "rgba(125, 163, 192, 0.35)",
+                ? "var(--progress-active-gradient)"
+                : "rgba(var(--muted-rgb), 0.35)",
             boxShadow:
-              i === active
-                ? "0 0 14px rgba(45, 212, 191, 0.7)"
-                : "0 0 0px transparent",
+              i === active ? "var(--progress-active-glow)" : "0 0 0px transparent",
           }}
           transition={{ type: "spring", stiffness: 400, damping: 28 }}
         />

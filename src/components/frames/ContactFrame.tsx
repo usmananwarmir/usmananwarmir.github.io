@@ -37,19 +37,11 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
           data-cursor="CONNECT"
           whileHover={{ scale: 1.03, rotateX: -2 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-lg transition-all group relative overflow-hidden glow-border"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(45,212,191,0.25), rgba(56,189,248,0.15))",
-            transformStyle: "preserve-3d",
-          }}
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-lg transition-all group relative overflow-hidden glow-border theme-cta-gradient"
+          style={{ transformStyle: "preserve-3d" }}
         >
           <motion.span
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, rgba(34,211,238,0.15), transparent)",
-            }}
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none theme-cta-shine"
             animate={{ x: ["-100%", "200%"] }}
             transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
           />

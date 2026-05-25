@@ -22,12 +22,8 @@ export function HeroFrame({ content }: HeroFrameProps) {
   return (
     <div className="relative min-h-[inherit] overflow-hidden px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-32 md:pb-20">
       <motion.div
-        className="absolute inset-0 opacity-80"
-        style={{
-          y: bgY,
-          background:
-            "radial-gradient(ellipse 55% 60% at 75% 40%, rgba(45,212,191,0.22), transparent 60%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(56,189,248,0.12), transparent)",
-        }}
+        className="absolute inset-0 opacity-80 theme-hero-glow"
+        style={{ y: bgY }}
         aria-hidden="true"
       />
 
@@ -115,23 +111,13 @@ export function HeroFrame({ content }: HeroFrameProps) {
           >
             {/* Glow pedestal */}
             <div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[40%] rounded-full blur-3xl opacity-60"
-              style={{
-                background:
-                  "radial-gradient(ellipse, rgba(45,212,191,0.45) 0%, rgba(56,189,248,0.15) 50%, transparent 70%)",
-              }}
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[40%] rounded-full blur-3xl opacity-60 theme-photo-halo"
               aria-hidden="true"
             />
 
             {/* Frame ring */}
             <div
-              className="absolute inset-0 rounded-[2rem] border border-aqua-accent/25 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(45,212,191,0.08) 0%, transparent 40%)",
-                boxShadow:
-                  "0 0 60px rgba(45, 212, 191, 0.12), inset 0 1px 0 rgba(255,255,255,0.06)",
-              }}
+              className="absolute inset-0 rounded-[2rem] border border-aqua-accent/25 pointer-events-none theme-photo-frame"
               aria-hidden="true"
             />
 

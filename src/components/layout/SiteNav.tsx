@@ -7,6 +7,7 @@ import type { Locale } from "@/lib/types";
 import type { SiteContent } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeSelector } from "@/components/layout/ThemeSelector";
 
 type SiteNavProps = {
   locale: Locale;
@@ -73,7 +74,8 @@ export function SiteNav({
         })}
       </nav>
 
-      <div className="flex items-center gap-3 sm:gap-4">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <ThemeSelector locale={locale} />
         <a
           href={SITE.linkedIn}
           target="_blank"

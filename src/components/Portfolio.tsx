@@ -21,6 +21,7 @@ import { CredentialsFrame } from "@/components/frames/CredentialsFrame";
 import { MetricsFrame } from "@/components/frames/MetricsFrame";
 import { ContactFrame } from "@/components/frames/ContactFrame";
 import { ScrollSection } from "@/components/ui/ScrollSection";
+import { PageLoaderGate } from "@/components/effects/PageLoader";
 import { SECTION_COUNT, SECTION_IDS } from "@/lib/sections";
 
 type PortfolioProps = {
@@ -132,8 +133,10 @@ function PortfolioContent({ locale }: PortfolioProps) {
 
 export function Portfolio({ locale }: PortfolioProps) {
   return (
-    <MouseParallaxProvider>
-      <PortfolioContent locale={locale} />
-    </MouseParallaxProvider>
+    <PageLoaderGate locale={locale}>
+      <MouseParallaxProvider>
+        <PortfolioContent locale={locale} />
+      </MouseParallaxProvider>
+    </PageLoaderGate>
   );
 }

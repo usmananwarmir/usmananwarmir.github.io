@@ -1,17 +1,30 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import { PageLoader } from "@/components/effects/PageLoader";
 
 export default function Home() {
-  useEffect(() => {
-    window.location.replace("/en/");
-  }, []);
+  const reducedMotion = useReducedMotion();
+  const [loading, setLoading] = useState(!reducedMotion);
 
-  return (
-    <div className="min-h-screen bg-[#0D0B1E] flex items-center justify-center">
-      <p className="mono-label text-[#00F0FF] text-sm tracking-widest">
-        Loading…
-      </p>
-    </div>
-  );
+  useEffect(() => {
+    if (reducedMotion) {
+      window.location.replace("/en/");
+      return;
+    }
+    if (!loading) {
+      window.location.replace("/en/");
+    }
+  }, [loading, reducedMotion]);
+
+  if (reducedMotion) {
+    return null;
+  }
+
+  if (loading) {
+    return <PageLoader locale="en" onComplete={() => setLoading(false)} />;
+  }
+
+  return null;
 }

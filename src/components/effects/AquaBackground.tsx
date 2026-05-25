@@ -17,49 +17,37 @@ export function AquaBackground() {
       className="fixed inset-0 overflow-hidden pointer-events-none z-0"
       aria-hidden="true"
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(165deg, #143252 0%, #0c1929 45%, #0e2438 100%)",
-        }}
-      />
+      <div className="absolute inset-0 theme-page-gradient" />
 
       <motion.div
-        className="absolute -top-[20%] -left-[10%] w-[70vmax] h-[70vmax] rounded-full"
+        className="absolute -top-[20%] -left-[10%] w-[70vmax] h-[70vmax] rounded-full theme-orb-primary"
         animate={{
           x: normalizedX * 70,
           y: normalizedY * 50,
         }}
         transition={{ type: "spring", stiffness: 35, damping: 22 }}
         style={{
-          background:
-            "radial-gradient(circle, rgba(45,212,191,0.4) 0%, rgba(56,189,248,0.18) 45%, transparent 70%)",
           filter: "blur(70px)",
           opacity: 0.65,
         }}
       />
 
       <motion.div
-        className="absolute top-[25%] -right-[15%] w-[55vmax] h-[55vmax] rounded-full"
+        className="absolute top-[25%] -right-[15%] w-[55vmax] h-[55vmax] rounded-full theme-orb-secondary"
         animate={{
           x: -normalizedX * 50,
         }}
         style={{
           y: parallaxSlow,
-          background:
-            "radial-gradient(circle, rgba(56,189,248,0.35) 0%, transparent 65%)",
           filter: "blur(55px)",
           opacity: 0.55,
         }}
       />
 
       <motion.div
-        className="absolute bottom-[-5%] left-[15%] w-[48vmax] h-[48vmax] rounded-full"
+        className="absolute bottom-[-5%] left-[15%] w-[48vmax] h-[48vmax] rounded-full theme-orb-tertiary"
         style={{
           y: parallaxFast,
-          background:
-            "radial-gradient(circle, rgba(20,184,166,0.3) 0%, transparent 70%)",
           filter: "blur(60px)",
           opacity: 0.5,
         }}
@@ -97,16 +85,7 @@ export function AquaBackground() {
         </div>
       </motion.div>
 
-      <div
-        className="absolute inset-0 opacity-[0.12]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px)
-          `,
-          backgroundSize: "72px 72px",
-        }}
-      />
+      <div className="absolute inset-0 opacity-[0.12] theme-grid-overlay" />
     </div>
   );
 }

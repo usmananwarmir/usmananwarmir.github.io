@@ -35,9 +35,8 @@ export function MetricsFrame({ content }: MetricsFrameProps) {
             whileHover={{
               scale: 1.05,
               rotateY: 4,
-              boxShadow: "0 0 40px rgba(232,121,249,0.25)",
             }}
-            className="glow-border rounded-xl p-6 md:p-8 text-center bg-bg-surface/40"
+            className="glow-border rounded-xl p-6 md:p-8 text-center bg-bg-surface/40 theme-metric-card"
             style={{ transformPerspective: 600, transformStyle: "preserve-3d" }}
           >
             <p className="text-3xl md:text-5xl font-semibold bg-gradient-to-b from-white to-cyan-accent bg-clip-text text-transparent">
