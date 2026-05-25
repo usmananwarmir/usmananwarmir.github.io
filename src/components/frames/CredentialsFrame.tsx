@@ -35,7 +35,7 @@ export function CredentialsFrame({ content }: CredentialsFrameProps) {
           </CinematicCard>
 
           <CinematicCard delay={0.1}>
-            <h3 className="mono-label text-magenta-accent mb-5">
+            <h3 className="mono-label text-cyan-accent mb-5">
               ◈ {credentials.certificationsTitle}
             </h3>
             <ul className="space-y-4">

@@ -33,14 +33,13 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
           href={SITE.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
+          data-cursor="CONNECT"
           whileHover={{ scale: 1.03, rotateX: -2 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-lg transition-all group relative overflow-hidden"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-lg transition-all group relative overflow-hidden glow-border"
           style={{
             background:
-              "linear-gradient(135deg, rgba(139,92,246,0.35), rgba(232,121,249,0.2))",
-            border: "1px solid rgba(34,211,238,0.4)",
-            boxShadow: "0 0 40px rgba(139,92,246,0.3)",
+              "linear-gradient(135deg, rgba(45,212,191,0.25), rgba(56,189,248,0.15))",
             transformStyle: "preserve-3d",
           }}
         >

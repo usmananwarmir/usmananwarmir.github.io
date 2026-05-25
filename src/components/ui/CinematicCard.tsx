@@ -55,7 +55,7 @@ export function CinematicCard({
         transformPerspective: 800,
         transformStyle: "preserve-3d",
       }}
-      className={`glow-border rounded-xl p-5 md:p-6 bg-bg-surface/60 ${className}`}
+      className={`glow-border rounded-xl p-5 md:p-6 ${className}`}
     >
       {children}
     </motion.div>

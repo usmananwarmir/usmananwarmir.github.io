@@ -5,7 +5,7 @@ type FrameLabelProps = {
 
 export function FrameLabel({ label, symbol = "◈" }: FrameLabelProps) {
   return (
-    <p className="mono-label text-magenta-accent/90 mb-4">
+    <p className="mono-label text-aqua-accent/90 mb-4">
       {symbol} {label}
     </p>
   );

@@ -17,16 +17,17 @@ export function FrameProgress({ total, active }: FrameProgressProps) {
         <motion.div
           key={i}
           layout
-          className={`rounded-full transition-colors duration-300 ${
-            i === active
-              ? "w-1.5 bg-gradient-to-b from-violet-accent via-magenta-accent to-cyan-accent"
-              : "w-1 bg-violet-accent/30"
-          }`}
+          className="rounded-full"
           animate={{
-            height: i === active ? 32 : 8,
+            width: 6,
+            height: i === active ? 36 : 8,
+            background:
+              i === active
+                ? "linear-gradient(180deg, #14b8a6, #2dd4bf, #38bdf8)"
+                : "rgba(125, 163, 192, 0.35)",
             boxShadow:
               i === active
-                ? "0 0 12px rgba(34,211,238,0.6)"
+                ? "0 0 14px rgba(45, 212, 191, 0.7)"
                 : "0 0 0px transparent",
           }}
           transition={{ type: "spring", stiffness: 400, damping: 28 }}

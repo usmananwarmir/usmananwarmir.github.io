@@ -1,7 +1,14 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import {
+  motion,
+  useMotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import { useEffect, useRef, type ReactNode } from "react";
+import { useMouseParallax } from "@/context/MouseParallaxContext";
 
 type ScrollSectionProps = {
   id: string;
@@ -17,26 +24,31 @@ export function ScrollSection({
   variant = "content",
 }: ScrollSectionProps) {
   const ref = useRef<HTMLElement>(null);
+  const { normalizedX, normalizedY } = useMouseParallax();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const rotateX = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [14, 0, 0, -12]);
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, -60]);
-  const z = useTransform(scrollYProgress, [0, 0.5, 1], [-100, 0, -60]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [10, 0, 0, -8]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -90]);
+  const z = useTransform(scrollYProgress, [0, 0.5, 1], [-80, 0, -50]);
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.12, 0.88, 1],
-    [0.35, 1, 1, 0.4]
+    [0, 0.1, 0.9, 1],
+    [0.5, 1, 1, 0.55]
   );
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.94]);
-  const blur = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [6, 0, 0, 4]
-  );
-  const filter = useTransform(blur, (v) => `blur(${v}px)`);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1, 0.96]);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothMouseX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const smoothMouseY = useSpring(mouseY, { stiffness: 80, damping: 20 });
+
+  useEffect(() => {
+    mouseX.set(normalizedX * 22);
+    mouseY.set(normalizedY * 16);
+  }, [normalizedX, normalizedY, mouseX, mouseY]);
 
   const baseClass =
     variant === "hero"
@@ -54,12 +66,12 @@ export function ScrollSection({
         z,
         opacity,
         scale,
-        filter,
-        transformPerspective: 1200,
+        x: smoothMouseX,
+        transformPerspective: 1400,
         transformStyle: "preserve-3d",
       }}
     >
-      {children}
+      <motion.div style={{ y: smoothMouseY }}>{children}</motion.div>
     </motion.section>
   );
 }

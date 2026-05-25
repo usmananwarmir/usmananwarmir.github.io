@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Locale } from "@/lib/types";
 import { getContent } from "@/lib/content";
-import { CinematicBackground } from "@/components/effects/CinematicBackground";
+import { MouseParallaxProvider } from "@/context/MouseParallaxContext";
+import { AquaBackground } from "@/components/effects/AquaBackground";
+import { AquaCursor } from "@/components/effects/AquaCursor";
 import { FilmGrain } from "@/components/effects/FilmGrain";
 import { LensFlare } from "@/components/effects/LensFlare";
-import { Scanlines } from "@/components/effects/Scanlines";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
 import { Vignette } from "@/components/effects/Vignette";
 import { SiteNav } from "@/components/layout/SiteNav";
@@ -26,7 +27,7 @@ type PortfolioProps = {
   locale: Locale;
 };
 
-export function Portfolio({ locale }: PortfolioProps) {
+function PortfolioContent({ locale }: PortfolioProps) {
   const content = getContent(locale);
   const [activeSection, setActiveSection] = useState(0);
 
@@ -85,12 +86,12 @@ export function Portfolio({ locale }: PortfolioProps) {
 
   return (
     <>
-      <CinematicBackground />
+      <AquaBackground />
       <LensFlare />
       <FilmGrain />
-      <Scanlines />
       <Vignette />
       <ScrollProgress />
+      <AquaCursor />
       <SiteNav
         locale={locale}
         content={content}
@@ -126,5 +127,13 @@ export function Portfolio({ locale }: PortfolioProps) {
         </ScrollSection>
       </main>
     </>
+  );
+}
+
+export function Portfolio({ locale }: PortfolioProps) {
+  return (
+    <MouseParallaxProvider>
+      <PortfolioContent locale={locale} />
+    </MouseParallaxProvider>
   );
 }

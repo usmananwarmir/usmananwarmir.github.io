@@ -23,10 +23,10 @@ export function ProjectsFrame({ content }: ProjectsFrameProps) {
           whileInView={{ opacity: 1, rotateX: 0, z: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="glow-border rounded-xl p-12 md:p-16 bg-bg-surface/50 backdrop-blur-md border-dashed"
+          className="glow-border rounded-xl p-12 md:p-16 border-dashed"
           style={{ transformPerspective: 800, transformStyle: "preserve-3d" }}
         >
-          <p className="mono-label text-magenta-accent mb-4 glow-text-cyan">
+          <p className="mono-label text-aqua-accent mb-4 glow-text-cyan">
             ◈ {projects.placeholder}
           </p>
           <p className="text-silver/70 text-base md:text-lg leading-relaxed">
@@ -42,7 +42,7 @@ export function ProjectsFrame({ content }: ProjectsFrameProps) {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
                 whileHover={{ opacity: 0.8, scale: 1.05, rotateY: 6 }}
-                className="aspect-video rounded-lg border border-violet-accent/25 bg-gradient-to-br from-violet-accent/10 to-cyan-accent/5"
+                className="aspect-video rounded-lg border border-aqua-accent/25 bg-gradient-to-br from-teal-accent/15 to-cyan-accent/10"
                 style={{ transformPerspective: 400 }}
               />
             ))}

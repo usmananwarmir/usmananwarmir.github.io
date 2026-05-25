@@ -25,7 +25,7 @@ export function ExperienceFrame({ content }: ExperienceFrameProps) {
                 <h3 className="text-lg md:text-xl font-semibold text-white">
                   {job.title}
                 </h3>
-                <p className="text-cyan-accent/90 text-sm font-medium mt-0.5">
+                <p className="text-aqua-accent text-sm font-medium mt-0.5">
                   {job.company}
                 </p>
                 <p className="mono-label text-muted mt-1 text-[0.65rem]">
