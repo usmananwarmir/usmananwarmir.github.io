@@ -100,14 +100,23 @@ export function HeroFrame({ content }: HeroFrameProps) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.45 }}
             whileHover={{ scale: 1.06, rotateY: 6 }}
-            className="relative w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden glow-border shrink-0"
+            className="relative w-32 h-32 md:w-44 md:h-44 shrink-0"
             data-cursor="PROFILE"
           >
+            <div
+              className="absolute inset-0 rounded-full blur-2xl opacity-50"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
             <Image
-              src="/profile-placeholder.svg"
+              src="/profile.png"
               alt={SITE.name}
-              fill
-              className="object-cover bg-bg-elevated"
+              width={176}
+              height={176}
+              className="relative z-10 w-full h-full object-contain object-bottom drop-shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
               priority
             />
           </motion.div>
