@@ -4,7 +4,6 @@ export const SITE = {
   location: "Germany",
   phone: "+49 178 9373363",
   linkedIn: "https://www.linkedin.com/in/usmananwarmir",
-  linkedInUsername: "usmananwarmir",
   github: "https://github.com/usmananwarmir",
   githubUsername: "usmananwarmir",
 } as const;

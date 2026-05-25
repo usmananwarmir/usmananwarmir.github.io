@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SITE } from "@/lib/constants";
 import type { SiteContent } from "@/lib/types";
 import { FrameLabel } from "@/components/ui/FrameLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -33,16 +32,6 @@ export function ProjectsFrame({ content }: ProjectsFrameProps) {
           <p className="text-silver/70 text-base md:text-lg leading-relaxed">
             {projects.comingSoon}
           </p>
-
-          <a
-            href={SITE.linkedIn}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="LINKEDIN"
-            className="inline-flex items-center gap-2 mt-6 mono-label text-aqua-accent hover:text-cyan-accent transition-colors"
-          >
-            Connect on LinkedIn →
-          </a>
 
           <div className="mt-10 grid grid-cols-3 gap-4">
             {[1, 2, 3].map((n, i) => (
