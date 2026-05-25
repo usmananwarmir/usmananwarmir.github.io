@@ -4,7 +4,7 @@ export const en: SiteContent = {
   meta: {
     title: "Usman Anwar — Infrastructure & Automation Engineer",
     description:
-      "Infrastructure and automation engineer in Leipzig. AWS, Ansible, CI/CD, and secure pipelines. Open to internships, working student, and full-time roles.",
+      "Infrastructure and automation engineer in Germany. AWS, Ansible, CI/CD, and secure pipelines. Open to internships, working student, and full-time roles.",
   },
   nav: {
     frames: "Frames",
@@ -20,12 +20,12 @@ export const en: SiteContent = {
     tagline: "Infrastructure & Automation Engineering",
     headline: "The systems behind reliable delivery.",
     subheadline:
-      "AWS infrastructure as code, Ansible automation, and CI/CD pipelines — from design through production rollout.",
+      "AWS infrastructure as code, Ansible automation, and CI/CD pipelines from design through production rollout.",
     scrollHint: "SCROLL TO EXPLORE",
     availability:
       "Open to internships & working student roles · Full-time flexible",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "LEIPZIG, GERMANY",
+    location: "GERMANY",
   },
   about: {
     frameLabel: "FRAME_002",
@@ -44,13 +44,13 @@ export const en: SiteContent = {
   skills: {
     frameLabel: "FRAME_004",
     title: "Tools that ship work.",
-    subtitle: "Automation, cloud, and collaboration — applied in real environments.",
+    subtitle: "Automation, cloud, and collaboration applied in real environments.",
     proficiencyLabel: "PROFICIENCY",
   },
   projects: {
     frameLabel: "FRAME_005",
     title: "Proof in the pipeline.",
-    subtitle: "Case studies and repositories — updated as projects are published.",
+    subtitle: "Case studies and repositories, updated as projects are published.",
     placeholder: "Projects coming soon",
     comingSoon:
       "Personal and open-source project details will be added here. Check back or connect on LinkedIn.",
@@ -71,13 +71,13 @@ export const en: SiteContent = {
     frameLabel: "FRAME_008",
     title: "Let's connect on infrastructure.",
     subtitle:
-      "Open to internships, working student positions, and full-time opportunities — timing flexible.",
+      "Open to internships, working student positions, and full-time opportunities. Timing flexible.",
     cta: "Connect on LinkedIn",
     phoneLabel: "Phone",
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "EU-based · Leipzig",
+      "Based in Germany",
       "Remote-friendly",
       "English C1 · German B1→C1",
     ],

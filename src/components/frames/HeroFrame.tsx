@@ -77,6 +77,15 @@ export function HeroFrame({ content }: HeroFrameProps) {
               <span className="mono-label text-xs px-4 py-2 rounded-full border border-aqua-accent/40 text-aqua-accent glass-chip">
                 {hero.availability}
               </span>
+              <a
+                href={SITE.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="LINKEDIN"
+                className="mono-label text-xs px-5 py-2 rounded-full border border-cyan-accent/50 text-white hover:bg-aqua-accent/15 hover:border-aqua-accent transition-colors"
+              >
+                LinkedIn →
+              </a>
             </motion.div>
 
             <motion.div
@@ -156,9 +165,15 @@ export function HeroFrame({ content }: HeroFrameProps) {
                 boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
               }}
             >
-              <p className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+              <a
+                href={SITE.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="LINKEDIN"
+                className="text-xl sm:text-2xl font-semibold text-white tracking-tight hover:text-aqua-accent transition-colors"
+              >
                 {SITE.name}
-              </p>
+              </a>
               <p className="mono-label text-muted mt-1.5 text-[0.65rem] leading-relaxed">
                 {hero.role}
               </p>

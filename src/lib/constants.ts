@@ -1,9 +1,10 @@
 export const SITE = {
   name: "Usman Anwar",
   role: "Infrastructure & Automation Engineer",
-  location: "Leipzig, Germany",
+  location: "Germany",
   phone: "+49 178 9373363",
-  linkedIn: "https://linkedin.com/in/usmananwarmir",
+  linkedIn: "https://www.linkedin.com/in/usmananwarmir",
+  linkedInUsername: "usmananwarmir",
   github: "https://github.com/usmananwarmir",
   githubUsername: "usmananwarmir",
 } as const;

@@ -60,7 +60,19 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
           </span>
         </motion.a>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <p className="mono-label text-muted mb-1">{contact.linkedInLabel}</p>
+            <a
+              href={SITE.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="LINKEDIN"
+              className="text-white hover:text-aqua-accent transition-colors text-lg font-medium"
+            >
+              linkedin.com/in/{SITE.linkedInUsername}
+            </a>
+          </div>
           <div>
             <p className="mono-label text-muted mb-1">{contact.phoneLabel}</p>
             <a
@@ -76,7 +88,7 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
               href={SITE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-magenta-accent transition-colors"
+              className="text-white hover:text-cyan-accent transition-colors"
             >
               @{SITE.githubUsername}
             </a>
@@ -99,7 +111,15 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
         <span>
           © {new Date().getFullYear()} {SITE.name}. {footer.rights}
         </span>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
+          <a
+            href={SITE.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-aqua-accent transition-colors"
+          >
+            LinkedIn
+          </a>
           <Link
             href={`/${locale}/impressum/`}
             className="hover:text-cyan-accent transition-colors"

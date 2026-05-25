@@ -2,9 +2,9 @@ import type { SiteContent } from "@/lib/types";
 
 export const de: SiteContent = {
   meta: {
-    title: "Usman Anwar — Infrastructure & Automation Engineer",
+    title: "Usman Anwar, Infrastructure & Automation Engineer",
     description:
-      "Infrastructure- und Automatisierungsingenieur in Leipzig. AWS, Ansible, CI/CD und sichere Pipelines. Offen für Praktika, Werkstudentenstellen und Festanstellungen.",
+      "Infrastructure- und Automatisierungsingenieur in Deutschland. AWS, Ansible, CI/CD und sichere Pipelines. Offen für Praktika, Werkstudentenstellen und Festanstellungen.",
   },
   nav: {
     frames: "Frames",
@@ -20,18 +20,18 @@ export const de: SiteContent = {
     tagline: "Infrastructure & Automation Engineering",
     headline: "Die Systeme hinter zuverlässiger Auslieferung.",
     subheadline:
-      "AWS-Infrastructure-as-Code, Ansible-Automatisierung und CI/CD-Pipelines — von der Planung bis zum Produktions-Rollout.",
+      "AWS-Infrastructure-as-Code, Ansible-Automatisierung und CI/CD-Pipelines von der Planung bis zum Produktions-Rollout.",
     scrollHint: "SCROLLEN ZUM ENTDECKEN",
     availability:
       "Offen für Praktika & Werkstudent · Festanstellung flexibel",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "LEIPZIG, DEUTSCHLAND",
+    location: "DEUTSCHLAND",
   },
   about: {
     frameLabel: "FRAME_002",
     title: "Strukturierte Umsetzung, klare Ergebnisse.",
     paragraphs: [
-      "IT- und Infrastruktur-Profi mit Erfahrung in der Umsetzung bereichsübergreifender Initiativen — von der Planung bis zum Rollout in internationalen Umgebungen.",
+      "IT- und Infrastruktur-Profi mit Erfahrung in der Umsetzung bereichsübergreifender Initiativen von der Planung bis zum Rollout in internationalen Umgebungen.",
       "Stark in strukturierter Ausführung, Stakeholder-Kommunikation und transparentem Fortschritt, mit praktischer Erfahrung in agilen und hybriden Arbeitsweisen.",
       "Aktuell Master Web Engineering an der TU Chemnitz, parallel Aufbau von produktionsnaher Automatisierung und Cloud-Infrastruktur im Unternehmensumfeld.",
     ],
@@ -44,13 +44,13 @@ export const de: SiteContent = {
   skills: {
     frameLabel: "FRAME_004",
     title: "Werkzeuge, die Arbeit liefern.",
-    subtitle: "Automatisierung, Cloud und Zusammenarbeit — in echten Umgebungen.",
+    subtitle: "Automatisierung, Cloud und Zusammenarbeit in echten Umgebungen.",
     proficiencyLabel: "KOMPETENZ",
   },
   projects: {
     frameLabel: "FRAME_005",
     title: "Nachweis in der Pipeline.",
-    subtitle: "Case Studies und Repositories — werden ergänzt.",
+    subtitle: "Case Studies und Repositories werden ergänzt.",
     placeholder: "Projekte folgen in Kürze",
     comingSoon:
       "Details zu persönlichen und Open-Source-Projekten werden hier ergänzt. LinkedIn für Updates.",
@@ -71,13 +71,13 @@ export const de: SiteContent = {
     frameLabel: "FRAME_008",
     title: "Infrastruktur besprechen?",
     subtitle:
-      "Offen für Praktika, Werkstudentenstellen und Festanstellungen — Zeitpunkt flexibel.",
+      "Offen für Praktika, Werkstudentenstellen und Festanstellungen. Zeitpunkt flexibel.",
     cta: "Auf LinkedIn verbinden",
     phoneLabel: "Telefon",
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "Standort EU · Leipzig",
+      "Standort Deutschland",
       "Remote möglich",
       "Englisch C1 · Deutsch B1→C1",
     ],
@@ -92,7 +92,7 @@ export const de: SiteContent = {
       title: "Werkstudent DevOps Engineer",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Apr. 2025 – Sep. 2025",
+      period: "Apr. 2025 to Sep. 2025",
       bullets: [
         "Promtail Lambda konzipiert und skalierbare, automatisierte Infrastruktur mit AWS und Python umgesetzt; CI/CD-Workflows und sichere Datenpipelines auf GitLab verbessert.",
         "Infrastructure as Code mit AWS CDK (Python): wiederverwendbare Stacks für Promtail Lambda, IAM-Rollen, S3-Buckets und Lambda-Funktionen; Swamp für CLI-Profile und Shell-Skripte.",
@@ -105,7 +105,7 @@ export const de: SiteContent = {
       title: "Studentische Praktikumsstelle",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Okt. 2024 – Mär. 2025",
+      period: "Okt. 2024 to Mär. 2025",
       bullets: [
         "End-to-End-Automatisierung mit Ansible für Device-Onboarding und Policy-Management eigenständig entworfen, entwickelt und ausgerollt.",
         "Modulare, wiederverwendbare Playbooks pro Betriebssystem für konsistente, skalierbare Automatisierung.",
@@ -118,7 +118,7 @@ export const de: SiteContent = {
       title: "Werkstudent Office IT",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Nov. 2023 – Sep. 2024",
+      period: "Nov. 2023 to Sep. 2024",
       bullets: [
         "Zuverlässige Systeme durch Konfiguration und Optimierung von Endanwender-IT; Unterstützung von Informationssicherheit und Netzwerkinfrastruktur.",
         "Zusammenarbeit mit externen Dienstleistern bei IT-Projekten, u. a. Netzwerk-Switch-Planung und E-Kommunikation.",
@@ -132,7 +132,7 @@ export const de: SiteContent = {
       title: "Software Developer and Security Analyst",
       company: "Order Directly",
       location: "Vereinigtes Königreich (Hybrid)",
-      period: "Sep. 2021 – Okt. 2022",
+      period: "Sep. 2021 to Okt. 2022",
       bullets: [
         "Responsive, benutzerfreundliche Oberflächen mit HTML, CSS und ReactJS im Team mit Senior-Entwicklern.",
         "Backend-Bausteine mit PHP7 und MySQL für dynamische Webanwendungen.",
@@ -146,7 +146,7 @@ export const de: SiteContent = {
       title: "Cyber Security Analyst",
       company: "NCSAEL-MCS",
       location: "Pakistan",
-      period: "Jan. 2019 – Sep. 2021",
+      period: "Jan. 2019 to Sep. 2021",
       bullets: [
         "Penetrationstests intern und bei Kunden geleitet; Schwachstellen bewertet und Berichte mit Empfehlungen erstellt.",
         "Pentest-Tooling entwickelt und ausgerollt zur Automatisierung und Dokumentation.",
@@ -206,12 +206,12 @@ export const de: SiteContent = {
     {
       degree: "Master Web Engineering",
       institution: "TU Chemnitz",
-      period: "Apr. 2025 – Mär. 2028",
+      period: "Apr. 2025 to Mär. 2028",
     },
     {
       degree: "Bachelor Informatik",
       institution: "UET Taxila",
-      period: "Sep. 2016 – Apr. 2021",
+      period: "Sep. 2016 to Apr. 2021",
     },
   ],
   certifications: [
