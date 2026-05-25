@@ -13,9 +13,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Usman Anwar — Infrastructure & Automation Engineer",
+  title: "Usman Anwar - Infrastructure & Automation Engineer",
   description:
-    "Portfolio of Usman Anwar — infrastructure, automation, AWS, Ansible, and CI/CD.",
+    "Portfolio of Usman Anwar - infrastructure, automation, AWS, Ansible, and CI/CD.",
 };
 
 export default function RootLayout({

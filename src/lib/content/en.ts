@@ -2,7 +2,7 @@ import type { SiteContent } from "@/lib/types";
 
 export const en: SiteContent = {
   meta: {
-    title: "Usman Anwar — Infrastructure & Automation Engineer",
+    title: "Usman Anwar - Infrastructure & Automation Engineer",
     description:
       "Infrastructure and automation engineer in Germany. AWS, Ansible, CI/CD, and secure pipelines. Open to internships, working student, and full-time roles.",
   },

@@ -1,4 +1,4 @@
-# Usman Anwar — Portfolio
+# Usman Anwar - Portfolio
 
 Devopslens-inspired dark portfolio for an **Infrastructure & Automation Engineer**. Built with Next.js, Tailwind CSS, and Framer Motion. Static export for **GitHub Pages** at `https://usmananwarmir.github.io`.
 
