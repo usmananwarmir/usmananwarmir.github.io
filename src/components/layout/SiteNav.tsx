@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SITE } from "@/lib/constants";
 import { SECTION_IDS } from "@/lib/sections";
 import type { Locale } from "@/lib/types";
 import type { SiteContent } from "@/lib/types";
@@ -72,8 +73,17 @@ export function SiteNav({
         })}
       </nav>
 
-      <div className="flex items-center gap-4">
-        <span className="mono-label text-cyan-accent/60 hidden sm:inline">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <a
+          href={SITE.linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="LINKEDIN"
+          className="mono-label text-xs text-silver/80 hover:text-aqua-accent transition-colors"
+        >
+          LinkedIn
+        </a>
+        <span className="mono-label text-cyan-accent/60 hidden md:inline">
           {String(activeSection + 1).padStart(2, "0")}/{SECTION_IDS.length}
         </span>
         <Link

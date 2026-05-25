@@ -33,6 +33,7 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
           href={SITE.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Connect with Usman Anwar on LinkedIn"
           data-cursor="CONNECT"
           whileHover={{ scale: 1.03, rotateX: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -44,7 +45,7 @@ export function ContactFrame({ content, locale }: ContactFrameProps) {
           }}
         >
           <motion.span
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
             style={{
               background:
                 "linear-gradient(90deg, transparent, rgba(34,211,238,0.15), transparent)",
