@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="UA">
+  <rect width="180" height="180" rx="40" fill="#0c1929"/>
+  <rect width="180" height="180" rx="40" fill="url(#bg)" opacity="0.9"/>
+  <circle cx="90" cy="90" r="64" stroke="#2dd4bf" stroke-width="5" opacity="0.55"/>
+  <circle cx="90" cy="90" r="46" stroke="#38bdf8" stroke-width="3" opacity="0.35"/>
+  <text
+    x="90"
+    y="108"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+    font-size="58"
+    font-weight="700"
+    letter-spacing="0.06em"
+    fill="#2dd4bf"
+  >UA</text>
+  <defs>
+    <linearGradient id="bg" x1="24" y1="12" x2="156" y2="168" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#143252"/>
+      <stop offset="0.55" stop-color="#0c1929"/>
+      <stop offset="1" stop-color="#0e2438"/>
+    </linearGradient>
+  </defs>
+</svg>
