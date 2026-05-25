@@ -30,6 +30,14 @@ export type Metric = {
   label: string;
 };
 
+export type ProjectItem = {
+  title: string;
+  company: string;
+  period?: string;
+  bullets: string[];
+  tags?: string[];
+};
+
 export type SiteContent = {
   meta: {
     title: string;
@@ -74,8 +82,7 @@ export type SiteContent = {
     frameLabel: string;
     title: string;
     subtitle: string;
-    placeholder: string;
-    comingSoon: string;
+    items: ProjectItem[];
   };
   credentials: {
     frameLabel: string;

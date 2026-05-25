@@ -2,9 +2,9 @@ import type { SiteContent } from "@/lib/types";
 
 export const de: SiteContent = {
   meta: {
-    title: "Usman Anwar, Infrastructure & Automation Engineer",
+    title: "Usman Anwar - Infrastructure & Automation Engineer",
     description:
-      "Infrastructure- und Automatisierungsingenieur in Deutschland. AWS, Ansible, CI/CD und sichere Pipelines. Offen für Praktika, Werkstudentenstellen und Festanstellungen.",
+      "Infrastructure- und Automatisierungsingenieur in Leipzig. AWS, Ansible, CI/CD und sichere Pipelines. Offen für Praktika, Werkstudentenstellen und Festanstellungen.",
   },
   nav: {
     frames: "Frames",
@@ -50,10 +50,43 @@ export const de: SiteContent = {
   projects: {
     frameLabel: "FRAME_005",
     title: "Nachweis in der Pipeline.",
-    subtitle: "Case Studies und Repositories werden ergänzt.",
-    placeholder: "Projekte folgen in Kürze",
-    comingSoon:
-      "Details zu persönlichen und Open-Source-Projekten werden hier ergänzt. LinkedIn für Updates.",
+    subtitle:
+      "Infrastruktur-, Automatisierungs- und Security-Projekte aus der Berufspraxis.",
+    items: [
+      {
+        title: "Infrastruktur-Policy-Compliance-Automatisierung mit Ansible",
+        company: "PRISMA European Capacity Platform GmbH",
+        tags: ["Ansible", "Automatisierung", "Policy-Compliance", "Dokumentation"],
+        bullets: [
+          "End-to-End-Ansible-Lösung für automatisiertes Device-Onboarding und Policy-Management konzipiert und ausgerollt.",
+          "Modulare, betriebssystemspezifische Playbooks für konsistente, skalierbare Automatisierung in heterogenen Umgebungen.",
+          "Vollautomatisierte Abläufe mit weniger manuellem Aufwand, stärkerer Policy-Compliance und effizienterem Betrieb.",
+          "Dokumentation zu Playbooks, Workflows und Wartung für Wissenstransfer und langfristige Skalierung.",
+          "Gesamtes Projekt eigenverantwortlich umgesetzt: Anforderungen, Implementierung, Tests, Deployment und Dokumentation.",
+        ],
+      },
+      {
+        title: "Malware-Analyse- und Threat-Detection-Framework",
+        company: "NCSAEL-MCS",
+        tags: [
+          "Malware-Analyse",
+          "Reverse Engineering",
+          "Python",
+          "Nmap",
+          "Sandboxing",
+        ],
+        bullets: [
+          "Framework zur Identifikation, Klassifikation und Untersuchung verdächtiger Dateien und Verhaltens in kontrollierten Umgebungen entwickelt.",
+          "Statische und dynamische Analyse mit Wireshark, Procmon und OllyDbg: Executables, Netzwerk, Persistenz, Registry und Systemaktivität.",
+          "Nmap für Netzwerk- und Schwachstellenanalyse zu verdächtigen Ports, Diensten und kompromittierter Kommunikation.",
+          "Reverse Engineering und Assembler-Analyse für Obfuskation, Process Injection, Privilege Escalation, API Hooking und Persistenz.",
+          "Registry- und Autostart-Persistenz überwacht, um unautorisierte Konfiguration und versteckte Malware-Fußabdrücke zu erkennen.",
+          "IOC-Erfassung und Reporting per Python automatisiert, manueller Analyseaufwand reduziert.",
+          "Sandbox-Tests für Ransomware, Trojaner, Spyware und Würmer ohne Auswirkung auf Produktionssysteme.",
+          "Technische Berichte zu Angriffsvektoren, Impact, Mitigation und Remediation; Projekt von Research bis Dokumentation eigenverantwortlich.",
+        ],
+      },
+    ],
   },
   credentials: {
     frameLabel: "FRAME_006",
@@ -92,7 +125,7 @@ export const de: SiteContent = {
       title: "Werkstudent DevOps Engineer",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Apr. 2025 to Sep. 2025",
+      period: "Apr. 2025 – Sep. 2025",
       bullets: [
         "Promtail Lambda konzipiert und skalierbare, automatisierte Infrastruktur mit AWS und Python umgesetzt; CI/CD-Workflows und sichere Datenpipelines auf GitLab verbessert.",
         "Infrastructure as Code mit AWS CDK (Python): wiederverwendbare Stacks für Promtail Lambda, IAM-Rollen, S3-Buckets und Lambda-Funktionen; Swamp für CLI-Profile und Shell-Skripte.",
@@ -132,7 +165,7 @@ export const de: SiteContent = {
       title: "Software Developer and Security Analyst",
       company: "Order Directly",
       location: "Vereinigtes Königreich (Hybrid)",
-      period: "Sep. 2021 to Okt. 2022",
+      period: "Sep. 2021 – Okt. 2022",
       bullets: [
         "Responsive, benutzerfreundliche Oberflächen mit HTML, CSS und ReactJS im Team mit Senior-Entwicklern.",
         "Backend-Bausteine mit PHP7 und MySQL für dynamische Webanwendungen.",
@@ -146,7 +179,7 @@ export const de: SiteContent = {
       title: "Cyber Security Analyst",
       company: "NCSAEL-MCS",
       location: "Pakistan",
-      period: "Jan. 2019 to Sep. 2021",
+      period: "Jan. 2019 – Sep. 2021",
       bullets: [
         "Penetrationstests intern und bei Kunden geleitet; Schwachstellen bewertet und Berichte mit Empfehlungen erstellt.",
         "Pentest-Tooling entwickelt und ausgerollt zur Automatisierung und Dokumentation.",
@@ -206,12 +239,12 @@ export const de: SiteContent = {
     {
       degree: "Master Web Engineering",
       institution: "TU Chemnitz",
-      period: "Apr. 2025 to Mär. 2028",
+      period: "Apr. 2025 – Mär. 2028",
     },
     {
       degree: "Bachelor Informatik",
       institution: "UET Taxila",
-      period: "Sep. 2016 to Apr. 2021",
+      period: "Sep. 2016 – Apr. 2021",
     },
   ],
   certifications: [

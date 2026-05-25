@@ -50,10 +50,43 @@ export const en: SiteContent = {
   projects: {
     frameLabel: "FRAME_005",
     title: "Proof in the pipeline.",
-    subtitle: "Case studies and repositories, updated as projects are published.",
-    placeholder: "Projects coming soon",
-    comingSoon:
-      "Personal and open-source project details will be added here. Check back or connect on LinkedIn.",
+    subtitle:
+      "Infrastructure, automation, and security work from professional roles.",
+    items: [
+      {
+        title: "Infrastructure Policy Compliance Automation with Ansible",
+        company: "PRISMA European Capacity Platform GmbH",
+        tags: ["Ansible", "Automation", "Policy compliance", "Documentation"],
+        bullets: [
+          "Designed and deployed an end-to-end Ansible solution to automate device onboarding and infrastructure policy management.",
+          "Built modular, OS-specific playbooks for consistent, scalable automation across heterogeneous environments.",
+          "Delivered a hands-off workflow that cut manual effort, strengthened policy compliance, and improved day-to-day operations.",
+          "Authored playbook, workflow, and maintenance documentation to support handover and long-term scale-up.",
+          "Owned the full project lifecycle independently: requirements, implementation, testing, deployment, and documentation.",
+        ],
+      },
+      {
+        title: "Malware Analysis and Threat Detection Framework",
+        company: "NCSAEL-MCS",
+        tags: [
+          "Malware analysis",
+          "Reverse engineering",
+          "Python",
+          "Nmap",
+          "Sandboxing",
+        ],
+        bullets: [
+          "Built a malware analysis framework to identify, classify, and investigate suspicious files and behaviors in controlled environments.",
+          "Performed static and dynamic analysis with Wireshark, Procmon, and OllyDbg, covering executables, network traffic, persistence, registry changes, and system activity.",
+          "Used Nmap for network and vulnerability analysis to surface suspicious ports, services, and malicious communication patterns.",
+          "Applied reverse engineering and assembly-level inspection to trace obfuscation, process injection, privilege escalation, API hooking, and persistence techniques.",
+          "Monitored registry and startup persistence to detect unauthorized configuration and hidden malware footholds.",
+          "Automated IOC collection and reporting with Python scripts to streamline triage and reduce manual analysis effort.",
+          "Ran sandbox-based testing to safely observe ransomware, trojans, spyware, and worm behavior without impacting production systems.",
+          "Delivered technical reports on attack vectors, impact, mitigation, and remediation; owned the project from research through documentation.",
+        ],
+      },
+    ],
   },
   credentials: {
     frameLabel: "FRAME_006",
