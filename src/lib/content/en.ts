@@ -25,7 +25,7 @@ export const en: SiteContent = {
     availability:
       "Open to internships & working student roles · Full-time flexible",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "GERMANY",
+    location: "FRANKFURT, GERMANY",
   },
   about: {
     frameLabel: "FRAME_002",
@@ -110,7 +110,7 @@ export const en: SiteContent = {
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "Based in Germany",
+      "Based in Frankfurt, Germany",
       "Remote-friendly",
       "English C1 · German B1→C1",
     ],
@@ -148,10 +148,10 @@ export const en: SiteContent = {
       ],
     },
     {
-      title: "Working Student Office IT",
+      title: "Working Student IT Administration",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Germany",
-      period: "Nov. 2023 – Sep. 2024",
+      period: "Oct. 2023 – Sep. 2024",
       bullets: [
         "Maintained reliable systems by configuring and ensuring the optimal performance of end-user computer systems, while supporting information security and network infrastructure.",
         "Collaborated with external providers on IT projects, including network switch planning and electronic communication initiatives.",

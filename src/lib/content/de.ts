@@ -25,7 +25,7 @@ export const de: SiteContent = {
     availability:
       "Offen für Praktika & Werkstudent · Festanstellung flexibel",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "DEUTSCHLAND",
+    location: "FRANKFURT, DEUTSCHLAND",
   },
   about: {
     frameLabel: "FRAME_002",
@@ -110,7 +110,7 @@ export const de: SiteContent = {
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "Standort Deutschland",
+      "Standort Frankfurt, Deutschland",
       "Remote möglich",
       "Englisch C1 · Deutsch B1→C1",
     ],
@@ -138,7 +138,7 @@ export const de: SiteContent = {
       title: "Studentische Praktikumsstelle",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Okt. 2024 to Mär. 2025",
+      period: "Okt. 2024 – Mär. 2025",
       bullets: [
         "End-to-End-Automatisierung mit Ansible für Device-Onboarding und Policy-Management eigenständig entworfen, entwickelt und ausgerollt.",
         "Modulare, wiederverwendbare Playbooks pro Betriebssystem für konsistente, skalierbare Automatisierung.",
@@ -148,10 +148,10 @@ export const de: SiteContent = {
       ],
     },
     {
-      title: "Werkstudent Office IT",
+      title: "Werkstudent IT-Administration",
       company: "PRISMA European Capacity Platform GmbH",
       location: "Leipzig, Deutschland",
-      period: "Nov. 2023 to Sep. 2024",
+      period: "Okt. 2023 – Sep. 2024",
       bullets: [
         "Zuverlässige Systeme durch Konfiguration und Optimierung von Endanwender-IT; Unterstützung von Informationssicherheit und Netzwerkinfrastruktur.",
         "Zusammenarbeit mit externen Dienstleistern bei IT-Projekten, u. a. Netzwerk-Switch-Planung und E-Kommunikation.",
