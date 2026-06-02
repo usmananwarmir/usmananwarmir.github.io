@@ -25,7 +25,7 @@ export const en: SiteContent = {
     availability:
       "Open to internships & working student roles · Full-time flexible",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "FRANKFURT, GERMANY",
+    location: "GERMANY",
   },
   about: {
     frameLabel: "FRAME_002",
@@ -110,7 +110,7 @@ export const en: SiteContent = {
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "Based in Frankfurt, Germany",
+      "Based in Germany",
       "Remote-friendly",
       "English C1 · German B1→C1",
     ],

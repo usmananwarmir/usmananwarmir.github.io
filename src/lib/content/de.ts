@@ -25,7 +25,7 @@ export const de: SiteContent = {
     availability:
       "Offen für Praktika & Werkstudent · Festanstellung flexibel",
     role: "INFRASTRUCTURE & AUTOMATION ENGINEER",
-    location: "FRANKFURT, DEUTSCHLAND",
+    location: "DEUTSCHLAND",
   },
   about: {
     frameLabel: "FRAME_002",
@@ -110,7 +110,7 @@ export const de: SiteContent = {
     linkedInLabel: "LinkedIn",
     githubLabel: "GitHub",
     badges: [
-      "Standort Frankfurt, Deutschland",
+      "Standort Deutschland",
       "Remote möglich",
       "Englisch C1 · Deutsch B1→C1",
     ],

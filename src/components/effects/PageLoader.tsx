@@ -18,8 +18,8 @@ const COPY = {
   de: { status: "Systeme werden gestartet", boot: "SYS.START", ready: "Systeme bereit" },
 } as const;
 
-const MIN_DISPLAY_MS = 2400;
-const MAX_WAIT_MS = 4500;
+const MIN_DISPLAY_MS = 1200;
+const MAX_WAIT_MS = 2250;
 
 type PageLoaderProps = {
   locale: Locale;
@@ -53,7 +53,7 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
     let pageReady = false;
 
     const controls = animate(progress, 100, {
-      duration: 2.1,
+      duration: 1.05,
       ease: [0.22, 0.61, 0.36, 1],
       onComplete: () => {
         setProgressDone(true);
@@ -90,7 +90,7 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
 
   useEffect(() => {
     if (phase !== "exit") return;
-    const t = window.setTimeout(onComplete, 720);
+    const t = window.setTimeout(onComplete, 360);
     return () => window.clearTimeout(t);
   }, [phase, onComplete]);
 
@@ -108,7 +108,7 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
           ? { opacity: 0, scale: 1.04, filter: "blur(14px)" }
           : { opacity: 1, scale: 1, filter: "blur(0px)" }
       }
-      transition={{ duration: 0.72, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.36, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="page-loader__bg" aria-hidden="true" />
       <div className="page-loader__grid" aria-hidden="true" />
@@ -128,13 +128,13 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
             className="page-loader__orbit-tag mono-label"
             style={
               {
-                "--orbit-delay": `${i * 0.6}s`,
+                "--orbit-delay": `${i * 0.3}s`,
                 "--orbit-radius": `${118 + i * 22}px`,
               } as CSSProperties
             }
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: [0, 0.85, 0.85], scale: 1 }}
-            transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
+            transition={{ delay: 0.15 + i * 0.075, duration: 0.25 }}
           >
             {node.label}
           </motion.span>
@@ -153,7 +153,7 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
           className="page-loader__monogram"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.075, duration: 0.275, ease: [0.22, 1, 0.36, 1] }}
         >
           UA
         </motion.div>
@@ -169,7 +169,7 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
           className="page-loader__name"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.6 }}
+          transition={{ delay: 0.125, duration: 0.3 }}
         >
           {SITE.name.split(" ").map((word, wi) => (
             <span key={word} className="page-loader__name-word">
@@ -180,8 +180,8 @@ export function PageLoader({ locale, onComplete }: PageLoaderProps) {
                   initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{
-                    delay: 0.35 + (wi * 5 + ci) * 0.04,
-                    duration: 0.45,
+                    delay: 0.175 + (wi * 5 + ci) * 0.02,
+                    duration: 0.225,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
@@ -264,7 +264,7 @@ export function PageLoaderGate({ locale, children }: PageLoaderGateProps) {
         animate={{
           opacity: loading ? 0 : 1,
         }}
-        transition={{ duration: 0.5, delay: loading ? 0 : 0.08 }}
+        transition={{ duration: 0.25, delay: loading ? 0 : 0.04 }}
         aria-hidden={loading}
       >
         {children}
